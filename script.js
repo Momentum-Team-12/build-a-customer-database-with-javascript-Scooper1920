@@ -2,6 +2,9 @@ console.log("What it do?");
 
 console.log(customers[0]);
 
+
+
+
 const root = document.getElementById("root");
 console.log("deeply rooted");
 
@@ -10,10 +13,17 @@ for (let customer of customers) {
   const customerCard = document.createElement("div");
   customerCard.classList.add("customer-card");
 
+
+
   root.appendChild(customerCard);
   customerCard.innerHTML = `
+  <img src="${customer.picture.thumbnail}"/>
 <p class="name" >${customer.name.title}. ${customer.name.first} ${customer.name.last}</p>
 
-<img src="${customer.picture.thumbnail}"/>
+
 `;
+function capitalizeFirstLetter() {
+    return customer.name.title.charAt(0).toUpperCase() + customerCard.slice(1);
+}
+
 }
