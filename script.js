@@ -1,0 +1,19 @@
+console.log("What it do?");
+
+console.log(customers[0]);
+
+const root = document.getElementById("root");
+console.log("deeply rooted");
+
+for (let customer of customers) {
+  console.log(customer);
+  const customerCard = document.createElement("div");
+  customerCard.classList.add("customer-card");
+
+  root.appendChild(customerCard);
+  customerCard.innerHTML = `
+<p class="name" >${customer.name.title}. ${customer.name.first} ${customer.name.last}</p>
+
+<img src="${customer.picture.thumbnail}"/>
+`;
+}
